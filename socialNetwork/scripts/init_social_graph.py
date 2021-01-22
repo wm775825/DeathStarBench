@@ -10,7 +10,9 @@ async def upload_follow(session, addr, user_0, user_1):
 async def upload_register(session, addr, user):
   payload = {'first_name': 'first_name_' + user, 'last_name': 'last_name_' + user,
              'username': 'username_' + user, 'password': 'password_' + user, 'user_id': user}
+  print(str(payload))
   async with session.post(addr + "/wrk2-api/user/register", data=payload) as resp:
+    print(str(resp))
     return await resp.text()
 
 
